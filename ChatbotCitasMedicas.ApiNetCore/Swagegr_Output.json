@@ -1,0 +1,217 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ChatbotCitasMedicas.ApiNetCore",
+    "version": "1.0"
+  },
+  "servers":[{"url":"https://apichatbotcitasmedicasapinetcore.azurewebsites.net"}],  
+   "paths": {
+    "/api/admin/ChatBot/Especialidad": {
+      "get": {
+        "tags": [
+          "ChatBot"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Especialidad"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Especialidad"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Especialidad"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/admin/ChatBot/Paciente/{dni}": {
+      "get": {
+        "tags": [
+          "ChatBot"
+        ],
+        "parameters": [
+          {
+            "name": "dni",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CitaMedica"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CitaMedica"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CitaMedica"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/admin/ChatBot/MisCitasMedicas/{dni}": {
+      "get": {
+        "tags": [
+          "ChatBot"
+        ],
+        "parameters": [
+          {
+            "name": "dni",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CitasMedicasListado"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CitasMedicasListado"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CitasMedicasListado"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CitaMedica": {
+        "type": "object",
+        "properties": {
+          "codigO_CITA": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigO_MEDICO": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigO_ESPECIALIDAD": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigO_TURNO": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombrE_PACIENTE": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechA_CITA": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dnI_PACIENTE": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CitasMedicasListado": {
+        "type": "object",
+        "properties": {
+          "codigO_CITA": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombrE_PACIENTE": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreS_MEDICO": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombrE_ESPECIALIDAD": {
+            "type": "string",
+            "nullable": true
+          },
+          "turno": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechA_CITA": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Especialidad": {
+        "type": "object",
+        "properties": {
+          "codigO_ESPECIALIDAD": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombrE_ESPECIALIDAD": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

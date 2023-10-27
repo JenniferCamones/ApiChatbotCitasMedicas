@@ -1,0 +1,13 @@
+Estimado @NombreSolicitante
+Tu ticket sobre @NombreGrupoMantenimiento donde indicas " @DescripcionDetallada " ha sido registrado satisfactoriamente con el código @CodigoSolicitud.
+Te mantendremos informado sobre el progreso de la atención. 
+Atentamente EDI
+
+
+nombre del servidor:   pruebascibertec2023.database.windows.net,1433
+usr:		       jennifercamones
+pw: 		       J@enniferCamones123
+
+
+38.172.128.50
+38.172.128.50
