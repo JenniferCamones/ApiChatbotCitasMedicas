@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ChatbotCitasMedicas.ApiNetCore.Models.EfCore
 {
     [Table("TB_PROGRAMAR_CITA", Schema = "dbo")]
+    //hola
     public class CitaMedica
     {
         [Key]
